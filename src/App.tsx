@@ -43,10 +43,9 @@ export const places = [{
   imageId: 'https://i.imgur.com/ZfQOOzfl.jpg'
 }];
 
-
 function App() {
   const [isLarge, setIsLarge] = useState(false);
-  const imageSize = isLarge ? 150 : 100;
+  const imageSize = isLarge ? 200 : 150;
   return (
     <>
     <label>

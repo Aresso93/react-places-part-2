@@ -9,14 +9,11 @@ export interface PlaceProps{
 }
 
 export function Place(props: PlaceProps){
-
-    const imageSize = useContext(ImageSizeContext)
-
+    
     return (
     <div>
         <PlaceImage 
         place={props.place} 
-        imageSize={imageSize}
         />
         <span>{props.place.name}</span>
         <span>{props.place.description}</span>

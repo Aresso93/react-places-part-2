@@ -5,7 +5,6 @@ import { Place } from "./place"
 export interface ListProps{
     children: ReactNode,
     places: PlaceModel[],
-    imageSize: number;
 }
 
 export function List(props: ListProps){
@@ -17,7 +16,7 @@ export function List(props: ListProps){
                     <li>
                         <Place 
                         place={place} 
-                        imageSize={props.imageSize}>
+                        >
                         </Place>
                     </li>
                 ))}

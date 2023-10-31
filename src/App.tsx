@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css'
 import { List } from './components/list';
+import { ImageSizeContext } from './contexts/image-size-context';
 
 export const places = [{
   id: 0,
@@ -23,7 +24,7 @@ export const places = [{
   id: 3, 
   name: 'Selarón Staircase in Rio de Janeiro, Brazil',
   description: 'This landmark was created by Jorge Selarón, a Chilean-born artist, as a "tribute to the Brazilian people."',
-  imageId: 'https://i.imgur.com/ae03rpIl.jpg'
+  imageId: 'https://i.imgur.com/aeO3rpIl.jpg'
   
 }, {
   id: 4, 
@@ -46,7 +47,6 @@ export const places = [{
 function App() {
   const [isLarge, setIsLarge] = useState(false);
   const imageSize = isLarge ? 150 : 100;
-  
   return (
     <>
     <label>
@@ -60,12 +60,12 @@ function App() {
         Use large images
       </label>
       <hr />
-      <List
-        places={places}  
-        imageSize={imageSize}
-        >
-      </List>
-        
+        <ImageSizeContext.Provider value={imageSize}>
+        <List
+          places={places}  
+          >
+        </List>
+        </ImageSizeContext.Provider>
     </>
   )
 }

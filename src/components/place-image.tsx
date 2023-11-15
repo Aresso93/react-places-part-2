@@ -1,6 +1,5 @@
-import { useContext } from "react";
 import { PlaceModel } from "../model/location"
-import { ImageSizeContext, useImageSizeContext } from "../contexts/image-size-context";
+import { useImageSizeContext } from "../contexts/image-size-context";
 
 export interface PlaceImageProps{
     place: PlaceModel;
